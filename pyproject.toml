@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "f5-tts"
+version = "0.3.4"
+description = "F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching"
+license = {text = "MIT License"}
+dependencies = [
+    "accelerate>=0.33.0",
+    "bitsandbytes==0.44.1",
+    "cached_path",
+    "click",
+    "datasets",
+    "ema_pytorch>=0.5.2",
+    "gradio>=4.44.1",
+    "jieba",
+    "librosa",
+    "matplotlib",
+    "numpy<=1.26.4",
+    "pydub",
+    "pypinyin",
+    "safetensors",
+    "soundfile",
+    "tomli",
+    "torch>=2.0.0",
+    "torchaudio>=2.0.0",
+    "torchdiffeq",
+    "tqdm>=4.65.0",
+    "transformers",
+    "transformers_stream_generator",
+    "vocos",
+    "wandb",
+    "x_transformers>=1.31.14",
+    "tensorflow>= 2.12.0",
+    "tf-keras",
+    "thefuzz",
+    "num2words",
+    "pydantic==2.10.6"
+]
+
+[project.optional-dependencies]
+eval = [
+    "faster_whisper==0.10.1",
+    "funasr",
+    "jiwer",
+    "modelscope",
+    "zhconv",
+    "zhon",
+]
+
+[project.scripts]
+"f5-tts_infer-cli" = "f5_tts.infer.infer_cli:main"
+"f5-tts_infer-gradio" = "f5_tts.infer.infer_gradio:main"
+"f5-tts_finetune-cli" = "f5_tts.train.finetune_cli:main"
+"f5-tts_finetune-gradio" = "f5_tts.train.finetune_gradio:main"
