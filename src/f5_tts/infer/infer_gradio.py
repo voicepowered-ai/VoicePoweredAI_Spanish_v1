@@ -712,7 +712,7 @@ El audio generado tendrá el mismo tono, registro y velocidad de habla que el au
             gr.HTML(
                 """
                 <a href="https://www.voicepowered.ai/" target="_blank" style="display: inline-block; line-height: 0;">
-                    <img src="/file=src/media/logo.png" alt="Voice Powered AI Logo"
+                    <img src="https://www.voicepowered.ai/wp-content/uploads/2025/04/logo-Voice-Powered-AI.jpeg" alt="Voice Powered AI Logo"
                         style="width: 250px; height: auto; border: none; display: block; margin: 0 auto;">
                 </a>
                 """
