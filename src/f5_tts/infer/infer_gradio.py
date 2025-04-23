@@ -49,7 +49,7 @@ tts_model_choice = DEFAULT_TTS_MODEL
 
 vocoder = load_vocoder()
 
-def load_f5tts(ckpt_path=str(cached_path("hf://jpgallegoar-vpb/VoicePoweredAI_Spanish_v1/spanish_v1/model_esp.safetensors"))):
+def load_f5tts(ckpt_path=str(cached_path("hf://VoicePoweredAI/VoicePoweredAI_Spanish_v1/spanish_v1/model_esp.safetensors"))):
     F5TTS_model_cfg = dict(dim=1024, depth=22, heads=16, ff_mult=2, text_dim=512, conv_layers=4)
     return load_model(DiT, F5TTS_model_cfg, ckpt_path)
 
