@@ -1,25 +1,34 @@
 [build-system]
-requires = ["setuptools>=61.0", "setuptools-scm>=8.0"]
+requires = ["setuptools >= 61.0", "setuptools-scm>=8.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "f5-tts"
-version = "0.3.4"
+dynamic = ["version"]
 description = "F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching"
+readme = "README.md"
 license = {text = "MIT License"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
 dependencies = [
     "accelerate>=0.33.0",
-    "bitsandbytes==0.44.1",
+    "bitsandbytes>0.37.0",
     "cached_path",
     "click",
     "datasets",
     "ema_pytorch>=0.5.2",
-    "gradio>=4.44.1",
+    "gradio",
+    "huggingface-hub==0.32.0",
     "jieba",
     "librosa",
     "matplotlib",
+    "num2words==0.5.13",
     "numpy<=1.26.4",
     "pydub",
+    "pydantic<=2.10.6",
     "pypinyin",
     "safetensors",
     "soundfile",
@@ -33,22 +42,21 @@ dependencies = [
     "vocos",
     "wandb",
     "x_transformers>=1.31.14",
-    "tensorflow>= 2.12.0",
-    "tf-keras",
-    "thefuzz",
-    "num2words",
-    "pydantic==2.10.6"
+    "torchcodec"
 ]
 
 [project.optional-dependencies]
 eval = [
-    "faster_whisper==0.10.1",
+    "faster_whisper",
+    "jiwer==4.0.0",
     "funasr",
-    "jiwer",
     "modelscope",
     "zhconv",
     "zhon",
 ]
+
+[project.urls]
+Homepage = "https://github.com/SWivid/F5-TTS"
 
 [project.scripts]
 "f5-tts_infer-cli" = "f5_tts.infer.infer_cli:main"
